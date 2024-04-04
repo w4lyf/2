@@ -1,19 +1,28 @@
 
-def print_before_after(func):
-    def wrapper(*args, **kwargs):
-        print("Before")
-        result = func(*args, **kwargs)
-        print("After")
-        return result
-    return wrapper
+def even_numbers():
+    num = 0
+    while True:
+        yield num
+        num += 2
 
-@print_before_after
-def generate_even_numbers(n):
-    for i in range(2, n+1, 2):
-        yield i
+gen = even_numbers()
 
-if __name__ == "__main__":
-    n = int(input("Enter the limit for even numbers: "))
-    print("Generated even numbers:")
-    for num in generate_even_numbers(n):
-        print(num)
+print("First 5 even numbers:")
+print(next(gen))  
+print(next(gen)) 
+print(next(gen))  
+print(next(gen))  
+print(next(gen))  
+
+def my_decorator(func):     
+    def wrapper():          
+        print("Something is happening before the function is called.")
+        func()              
+        print("Something is happening after the function is called.")
+    return wrapper         
+
+@my_decorator               
+def say_hello():            
+    print("Hello!")         
+
+say_hello()                
