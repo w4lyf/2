@@ -1,20 +1,15 @@
 import pandas as pd
 
-# Import the CSV file
 df = pd.read_csv('example.csv')
 
-# Display the entire DataFrame as a string
 print("DataFrame as a string:")
 print(df.to_string())
 
-# Display the first few rows of the DataFrame
 print("\nFirst few rows of the DataFrame:")
 print(df.head())
 
-# Display the last few rows of the DataFrame
 print("\nLast few rows of the DataFrame:")
 print(df.tail())
 
-# Display information about the DataFrame
 print("\nInformation about the DataFrame:")
 print(df.info())
