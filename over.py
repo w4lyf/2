@@ -1,22 +1,32 @@
-class Base:
-    def method(self, x=None):
-        if x is None:
-            print("Base method without arguments")
-        else:
-            print("Base method with argument:", x)
+class Animal:
+    def make_sound(self):
+        print("Some generic sound")
 
-class Derived(Base):
-    def method(self, x=None):
-        if x is None:
-            print("Derived method without arguments")
-        else:
-            print("Derived method with argument:", x)
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof!")
 
-if __name__ == "__main__":
-    obj_base = Base()
-    obj_base.method()      
-    obj_base.method(10)    
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
 
-    obj_derived = Derived()
-    obj_derived.method()      
-    obj_derived.method(20)   
+class Duck(Animal):
+    def make_sound(self):
+        print("Quack!")
+
+dog = Dog()
+dog.make_sound()
+
+cat = Cat()
+cat.make_sound() 
+
+duck = Duck()
+duck.make_sound() 
+
+class Calculator:
+    def add(self, a, b=0):
+        return a + b
+
+calc = Calculator()
+print("Sum:", calc.add(2, 3))  
+print("Sum:", calc.add(2))    
